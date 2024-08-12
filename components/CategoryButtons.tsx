@@ -4,11 +4,12 @@ import Colors from '@/constants/Colors'
 import destinationCategories from '@/data/catagories'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 
-
 type Props = {
     onCategoryChanged: (category: string) => void;
-  }
-  
+}
+
+
+
 const CategoryButtons = ({onCategoryChanged}: Props) => {
     const scrollRef = useRef<ScrollView>(null);
     const itemRef = useRef<TouchableOpacity[] | null[] >([]);
@@ -44,7 +45,9 @@ const CategoryButtons = ({onCategoryChanged}: Props) => {
             onPress={() => handleSelectCategory(index)} 
             style={activeIndex == index ? styles.categoryBtnActive : styles.categoryBtn}>
 
+                
                 <MaterialCommunityIcons name={item.iconName as any} color={activeIndex == index ? Colors.white : Colors.black} size={20} />
+
                 <Text style={activeIndex == index ? styles.categoryBtnTxtActive : styles.categoryBtnTxt}>{item.title}</Text>
 
             </TouchableOpacity>
