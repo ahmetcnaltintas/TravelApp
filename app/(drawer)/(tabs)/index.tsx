@@ -50,7 +50,7 @@ const Page = () => {
             <TouchableOpacity 
               onPress={toggleMenu} 
               style={styles.headerButton}>
-              <Ionicons name='notifications' size={20} color={Colors.black} />
+                <Image source={{ uri: user?.avatar }} style={styles.avatarImage} />
             </TouchableOpacity>
 
             <Modal
@@ -69,7 +69,7 @@ const Page = () => {
                     <Text>Logout</Text>
                   </TouchableOpacity>
                   <TouchableOpacity style={styles.menuItem} onPress={handleLogout}>
-                    <Text>Logout</Text>
+                    <Text>Profile</Text>
                   </TouchableOpacity>
                 </View>
               </TouchableOpacity>
@@ -148,6 +148,11 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 3,
   },
+  avatarImage: {
+    width: 25,
+    height: 25,
+    borderRadius: 10,
+  },
   modalOverlay: {
     flex: 1,
     justifyContent: 'flex-start',
@@ -171,5 +176,6 @@ const styles = StyleSheet.create({
   },
   menuItem: {
     padding: 10,
-  }
+  },
+
 });
