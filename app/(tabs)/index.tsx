@@ -24,11 +24,19 @@ const Page = () => {
       headerTransparent: true,
       headerTitle: "",
       headerLeft: () => (
-        <TouchableOpacity onPress={() => {}} style={{ marginLeft: 20, }}>
-          <Image 
-          source={{ uri:"https://edulim.com.tr/frontend/images/banavt3.png"}}
-          style={{ width:40, height:40, borderRadius:10, }}
-          />
+        <TouchableOpacity 
+        onPress={() => {}} 
+        style={{ 
+          marginLeft:20, 
+          backgroundColor: Colors.white,
+          padding: 10,
+          borderRadius: 10,
+          shadowColor: "#171717",
+          shadowOffset: {width: 2, height: 4},
+          shadowOpacity: 0.2,
+          shadowRadius: 3,
+        }}>
+          <Ionicons name='menu' size={20} color={Colors.black} />
         </TouchableOpacity>
       ),
       headerRight: () => (
