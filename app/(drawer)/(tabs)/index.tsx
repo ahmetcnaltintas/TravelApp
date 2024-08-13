@@ -11,7 +11,7 @@ import GroupListings from '@/components/GroupListings';
 import groupData from '@/data/groups.json';
 import { useNavigation } from '@react-navigation/native';
 import { DrawerActions } from '@react-navigation/native';
-import { useAuth } from '@/contexts/AuthContext'; // AuthContext'i import edin
+import { useAuth } from '@/contexts/AuthContext'; 
 
 const Page = () => {
   const navigation = useNavigation();
@@ -30,7 +30,7 @@ const Page = () => {
   const handleLogout = async () => {
     await signOut();
     toggleMenu();
-    router.push('/(auth)/login');
+    router.push('/loading');
   };
 
   return (

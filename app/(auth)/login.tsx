@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, StyleSheet } from 'react-native';
+import { View, TextInput, Button, StyleSheet, Text } from 'react-native';
 import { useAuth } from '../../contexts/AuthContext';
-import { router } from 'expo-router';
+import { Stack, router } from 'expo-router';
+import Colors from '@/constants/Colors';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Feather } from '@expo/vector-icons';
 
 export default function LoginScreen() {
   const [email, setEmail] = useState('john@mail.com'); // input'a varsayılan email gönderildi
@@ -19,6 +22,21 @@ export default function LoginScreen() {
   };
 
   return (
+    <>
+    <Stack.Screen
+      options={{
+        headerTransparent: true,
+        headerTitle: "",
+        headerLeft: () => (
+          <TouchableOpacity onPress={() => router.back()} style={styles.headerLeftBtn}>
+            <View style={styles.headerLeftContainer}>
+              <Feather name='arrow-left' size={20} color={Colors.black} />
+            </View>
+          </TouchableOpacity>
+        ),
+      }}
+    />
+
     <View style={styles.container}>
       <TextInput
         style={styles.input}
@@ -33,8 +51,13 @@ export default function LoginScreen() {
         onChangeText={setPassword}
         secureTextEntry
       />
+      <TouchableOpacity onPress={handleLogin}>
+        <Text>Login</Text>
+      </TouchableOpacity>
+
       <Button title="Login" onPress={handleLogin} />
     </View>
+    </>
   );
 }
 
@@ -43,6 +66,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     padding: 20,
+    backgroundColor: Colors.black,
   },
   input: {
     height: 40,
@@ -50,5 +74,18 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginBottom: 10,
     padding: 10,
+  },
+  button: {
+    color: Colors.primaryColor,
+  },
+  headerLeftBtn: {
+    backgroundColor: "rgba(255, 255, 255, 0.5)",
+    borderRadius: 10,
+    padding: 4,
+  },
+  headerLeftContainer: {
+    backgroundColor: Colors.white,
+    borderRadius: 10,
+    padding: 6,
   },
 });
