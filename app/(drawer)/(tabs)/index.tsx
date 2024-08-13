@@ -68,7 +68,7 @@ const Page = () => {
                   <TouchableOpacity style={styles.menuItem} onPress={handleLogout}>
                     <Text>Logout</Text>
                   </TouchableOpacity>
-                  <TouchableOpacity style={styles.menuItem} onPress={handleLogout}>
+                  <TouchableOpacity style={styles.menuItem} onPress={() => router.push('/(tabs)/profile')}>
                     <Text>Profile</Text>
                   </TouchableOpacity>
                 </View>

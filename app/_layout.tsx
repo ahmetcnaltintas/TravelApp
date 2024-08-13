@@ -38,7 +38,7 @@ function RootLayoutNav() {
       if (isFirstLaunch) {
         router.replace('/loading');
       } else if (user) {
-        router.replace('/(drawer)');
+        router.replace('/(drawer)/(tabs)');
       } else {
         router.replace('/(auth)/login');
       }

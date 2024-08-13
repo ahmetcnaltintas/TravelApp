@@ -17,7 +17,6 @@ export default function LoginScreen() {
       router.replace('/(drawer)');
     } catch (error) {
       console.error('Login error:', error);
-      // Hata mesajını kullanıcıya gösterin
     }
   };
 
@@ -66,7 +65,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     padding: 20,
-    backgroundColor: Colors.black,
   },
   input: {
     height: 40,
